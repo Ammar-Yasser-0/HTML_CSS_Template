@@ -52,6 +52,7 @@ header{
     position: relative;
     -webkit-box-shadow: 0 0 10px #ddd;
     -moz-box-shadow: 0 0 10px #ddd;
+    background-color: white;
 }
 header .container{
     display: flex;
@@ -121,8 +122,10 @@ header .logo{
 }
 
 /* landing */
-
-.landing::before{
+.landing {
+    position: relative;
+}
+.landing::before {
     content: "";
     position: absolute;
     left: 0;
@@ -134,15 +137,54 @@ header .logo{
     transform: skewY(-6deg);
     transform-origin: top left;
 }
-.landing .container{
-    min-height: calc(100vh -72px);
+.landing .container {
+    min-height: calc(100vh - 72px);
     display: flex;
     align-items: center;
+    padding-bottom: 120px;
 }
-.text{
-    width: 50%;
+.landing .text {
+    flex: 1;
 }
-img{
+@media (max-width: 991px) {
+    .landing .text {
+      text-align: center;
+    }
+}
+.landing .text h1 {
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: -2px;
+}
+@media (max-width: 767px) {
+    .landing .text h1 {
+      font-size: 28px;
+    }
+}
+.landing .text p {
+    font-size: 23px;
+    line-height: 1.7;
+    margin: 5px 0 0;
+    color: #666;
+    max-width: 500px;
+}
+@media (max-width: 991px) {
+    .landing .text p {
+      margin: 10px auto;
+    }
+}
+ @media (max-width: 767px) {
+    .landing .text p {
+      font-size: 18px;
+    }
+}
+.landing .land-img img {
+    position: relative;
     width: 600px;
-    max-width: 100%;
+    animation: up-and-down 5s linear infinite;
+}
+@media (max-width: 991px) {
+    .landing .image {
+      display: none;
+    }
 }
