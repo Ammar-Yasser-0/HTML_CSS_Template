@@ -30,13 +30,13 @@ ul {
 }
 .title {
   transition: 0.3s;
+  margin: 0 auto 80px;
   border: 2px solid black;
   padding: 10px 20px;
   font-size: 30px;
   width: fit-content;
   position: relative;
   z-index: 1;
-  margin: auto auto;
 }
 .title::after,
 .title::before {
@@ -285,3 +285,5 @@ header .logo {
     transform: translateY(-15px);
   }
 }
+
+/* articles */
