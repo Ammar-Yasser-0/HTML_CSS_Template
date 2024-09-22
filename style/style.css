@@ -14,6 +14,10 @@ html {
 body {
   font-family: "SUSE", sans-serif;
 }
+::selection{
+  background-color: var(--main-color);
+  color: white;
+}
 a {
   text-decoration: none;
 }
@@ -208,7 +212,7 @@ header .logo {
   min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
-  padding-bottom: 120px;
+  padding-bottom: 25px;
 }
 .landing .text {
   flex: 1;
@@ -248,7 +252,6 @@ header .logo {
 .landing .land-img img {
   position: relative;
   width: 600px;
-  animation: up-and-down 5s linear infinite;
 }
 @media (max-width: 991px) {
   .landing .land-img {
