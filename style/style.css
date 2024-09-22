@@ -6,7 +6,7 @@
 }
 :root {
   --main-color: #8a5bff;
-  --main-color-alt: #070033;
+  --main-color-alt: #46D1F8;
 }
 html {
   scroll-behavior: smooth;
@@ -139,11 +139,11 @@ header .container {
     height: 50px;
   }
 }
-.links {
+header .links {
   display: flex;
 }
 @media (max-width: 767px) {
-  .links {
+  header .links {
     margin: auto;
   }
 }
@@ -156,7 +156,7 @@ header .logo {
   justify-content: center;
   align-items: center;
 }
-.links > li > a {
+header .links > li > a {
   color: black;
   display: flex;
   justify-content: center;
@@ -168,13 +168,13 @@ header .logo {
   overflow: hidden;
 }
 @media (max-width: 767px) {
-  .links > li > a {
+  header .links > li > a {
     padding: 10px;
     font-size: 14px;
     height: 40px;
   }
 }
-.links > li > a::before {
+header .links > li > a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -184,11 +184,11 @@ header .logo {
   left: -100%;
   transition: 0.3s;
 }
-.links > li > a:hover {
+header .links > li > a:hover {
   color: var(--main-color);
   background-color: #f8f8f8;
 }
-.links > li > a:hover::before {
+header .links > li > a:hover::before {
   left: 0;
 }
 
@@ -271,8 +271,8 @@ header .logo {
 }
 .landing .down i {
   animation: bouncing 1.5s infinite;
-  font-size: 2.5em;
-  font-weight: 900;
+  font-size: 2em;
+  font-weight: 800;
 }
 @keyframes bouncing {
   0%,
@@ -302,20 +302,53 @@ header .logo {
 }
 .articles .card{
   box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
-  border-radius: 6px;
-  overflow: hidden;
+  border-radius: 10px;
   transition: transform 0.3s,box-shadow 0.3s;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.articles .card::after, .card::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -2;
+  padding: 3px;
+  visibility: hidden;
+  border-radius: 10px;
+  transition: visibility 0s, opacity 0.3s ease;
+  background-image: conic-gradient(#F49AF1,#8A5BFF,#F49AF1);
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0;
 }
 .articles .card:hover{
   transform: translateY(-10px);
   box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
 }
+.articles .card:hover::before,
+.articles .card:hover::after{
+  visibility:visible ;
+  opacity: 1;
+}
 .articles .card img{
   width: 100%;
   max-width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: -1px;
+  padding-top: 10px;
+  background-color: white;
 }
 .card .content{
   padding: 15px;
+  background-color: white;
 }
 .card h3{
   margin: 0;
@@ -324,13 +357,17 @@ header .logo {
   margin: 10px 0 0;
   line-height: 1.5;
   color: #777;
+  
 }
 .card .info{
+  background-color: white;
   padding: 15px;
   border-top: 1px solid #e6e6e6;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .card a{
   font-weight: bold;
@@ -338,6 +375,7 @@ header .logo {
 }
 .card i{
   color: var(--main-color);
+  font-size: 25px;
 }
 
 /* Gallary */
@@ -561,6 +599,7 @@ header .logo {
 .team .box .data .social i {
   color: #777;
   transition: 0.3s;
+  font-size: 17px;
 }
 .team .box .info {
   padding-left: 80px;
@@ -902,7 +941,6 @@ header .logo {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 50px;
 }
 .discount .image {
   background-image: url(/img/discount-background1.jpg);
@@ -923,7 +961,7 @@ header .logo {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(23 135 224 / 97%);
+  background-color: rgba(55, 158, 242, 0.974);
   z-index: -1;
 }
 @media (max-width: 991px) {
@@ -954,7 +992,7 @@ header .logo {
 }
 .discount .form textarea.input {
   resize: none;
-  height: 200px;
+  height: 160px;
 }
 .discount .form .input:focus {
   outline: none;
@@ -970,6 +1008,7 @@ header .logo {
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  margin-bottom: 25px;
 }
 .discount .form [type="submit"]:hover {
   background-color: var(--main-color-alt);
@@ -991,9 +1030,23 @@ header .logo {
   width: 300px;
   max-width: 100%;
 }
+/* Waves */
+.spacer{
+  aspect-ratio: 585 / 300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  margin-top: -335px;
+
+}
+.layer{
+  background-image: url(/img/waves.svg);
+}
 /* Footer */
 .footer {
-  background-color: #191919;
+  background-image: url(/img/footerbg.svg);
   padding: 70px 0 0;
 }
 @media (max-width: 767px) {
@@ -1110,4 +1163,7 @@ header .logo {
   color: white;
   margin: 50px 0 0;
   border-top: 1px solid #444;
+}
+.copyright i{
+  color: var(--main-color);
 }
