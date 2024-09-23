@@ -1030,23 +1030,9 @@ header .links > li > a:hover::before {
   width: 300px;
   max-width: 100%;
 }
-/* Waves */
-.spacer{
-  aspect-ratio: 585 / 300;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  margin-top: -335px;
-
-}
-.layer{
-  background-image: url(/img/waves.svg);
-}
 /* Footer */
 .footer {
-  background-image: url(/img/footerbg.svg);
+  background-color: #070033;
   padding: 70px 0 0;
 }
 @media (max-width: 767px) {
@@ -1076,7 +1062,7 @@ header .links > li > a:hover::before {
   margin-right: 10px;
 }
 .footer .box .social li a {
-  background-color: #313131;
+  background-color: #070033;
   color: #b9b9b9;
   display: inline-flex;
   justify-content: center;
